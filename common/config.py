@@ -10,7 +10,6 @@ class Config:
     def load(filename):
         with open(os.path.join("config",filename + ".yaml"), "rb") as f:
             config_str = f.read()
-        config_str = yaml.load(config_str)
-        print(config_str)
+        config_str = yaml.load(config_str, Loader=yaml.FullLoader)
 
         return config_str

@@ -1,8 +1,8 @@
 class ResponseObject():
     def __init__(self, status=None, message=None, data=None):
-        self._status = status
-        self._message = message
-        self._data = data
+        self.status = status
+        self.message = message
+        self.data = data
     
     def update(self, code=None, data=None, msg=None):
         """
@@ -13,11 +13,11 @@ class ResponseObject():
         :return:
         """
         if code is not None:
-            self._status = code
+            self.status = code
         if data is not None:
-            self._data = data
+            self.data = data
         if msg is not None:
-            self._message = msg
+            self.message = msg
     
     def add_field(self, name=None, value=None):
         """
@@ -36,7 +36,7 @@ class ResponseObject():
         :return:
         """
         body = self.__dict__
-        body["data"] = body.pop("_data")
-        body["message"] = body.pop("_message")
-        body["status_code"] = body.pop("_status")
+        # body["data"] = body.pop("_data")
+        # body["message"] = body.pop("_message")
+        # body["status_code"] = body.pop("_status")
         return body
