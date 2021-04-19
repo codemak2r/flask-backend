@@ -11,5 +11,5 @@ class Config:
         with open(os.path.join("config",filename + ".yaml"), "rb") as f:
             config_str = f.read()
         config_str = yaml.load(config_str, Loader=yaml.FullLoader)
-
+        # print(isinstance(config_str,dict)) 
         return config_str
