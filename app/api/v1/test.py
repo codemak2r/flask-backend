@@ -1,5 +1,5 @@
 
-from common.route import route
+from common.core import route
 from . import api_v1
 from common.response import ResponseObject
 
